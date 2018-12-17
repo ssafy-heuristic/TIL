@@ -1,0 +1,118 @@
+1. git bash
+구글에서 git bash 검색
+git for windows 다운
+관리자 권한으로 실행해서 설치, 다 기본 값
+
+2. python 설치
+Download -> Windows
+Python 3.6.7 - 2018-10-20
+Download Windows x86-64 executable installer
+Add Python 3.6 to PATH 체크
+설치
+Disable path length limit 클릭
+close
+
+git bash 에서 버전 확인
+python -V
+
+3. vscode 다운
+
+4. Typora
+Markdown
+markdown guide 검색
+markdown 문법을 확인할 수 있음
+Markdown 에디터 중 가장 많이 사용하는 것이 Typora
+실시간으로 변환시켜 보여줌
+ctrl+/를 하면 실제 문법이 보임
+
+
+웹스크래핑
+
+1. 
+git bash 실행
+python -i 로 python 실행
+python만 하면 멈춤
+
+python 명령어 실행
+import webbrowser
+webbrowser.open("https://www.google.com")
+webbrowser.open_new("https://www.google.com")
+새 창
+webbrowser.open_new_tab("https://www.google.com")
+새 탭
+빠져나올 때는 exit()
+
+2. 정보 스크래핑
+VScode default shell 변경
+ctrl + shift + P
+default 입력
+Git bash 로 shell 을 변경하면 vscode에서 바로 git bash 사용 가능
+
+
+~ 진도 문제로 내일 오전에 이어서
+
+5. git
+분산 버전 관리 시스템
+코드의 History 관리, 개발 과정의 역사를 알 수 있음
+비트버킷 -> 무료로 private을 무제한
+깃랩 -> 협업에 용이, 디자인 잘 되어 있음
+
+add      커밋할 목록 추가
+commit 커밋 만들기
+push     현재까지의 역사가 기록되어 있는 곳에 새로 생성한 커밋 반영
+
+git add helloworld.py
+git commit -m
+	- 로 시작하면 
+git config --global user.name "John"
+
+git bash 실행 후, 미리 설정되어 있지 모를 계정 정보 삭제
+git config --global --unset credential.helper
+git config --system --unset credential.helper
+git config --global user.name "내 이름"
+git config --global user.email "내 이메일"
+git config --global --list
+
+user.name : ssafy-heuristic
+user.email : ssafy.heuristic@gmail.com
+
+새 repository 생성 TIL
+
+바탕화면에 TIL 폴더를 만들고 샘플 파일 집어넣기
+TIL 로 들어가서 
+git init
+git 시작
+git add ex_1.py
+commit 할 수 있게 ex_1.py를 추가
+git add tutorial.md
+
+$ git commit -m "first commit"
+[master (root-commit) cd0692c] first commit
+ 2 files changed, 88 insertions(+)
+ create mode 100644 ex_1.py
+ create mode 100644 tutorial.md
+
+$ git log
+commit cd0692c3bb75e69d9cdb0f08406ada7ecbc25e13 (HEAD -> master)
+Author: ssafy-heuristic <ssafy.heuristic@gmail.com>
+Date:   Mon Dec 17 17:41:41 2018 +0900
+
+    first commit
+
+$git remote add origin https://github.com/ssafy-heuristic/TIL.git
+한 번만 해서 연동
+
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.01 KiB | 1.01 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/ssafy-heuristic/TIL.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+2번째 commit
+$ git commit -m "second commit"
+$ git log
+$ git push
